@@ -42,7 +42,7 @@ namespace MeetTheTeacher.Logic
         {
             return $"<td align=\"left\">{GetHtmlForName()}</td>\n" +
                 $"<td align=\"left\">{GetHtmlForDay()}</td>\n" +
-                $"<td align=\"left\">{GetHtmlForTime()}</td>\n" +
+                $"<td align=\"left\">{GetHtmlForHour()}</td>\n" +
                 $"<td align=\"left\">{GetHtmlForRoom()}</td>";
         }
 
@@ -51,9 +51,9 @@ namespace MeetTheTeacher.Logic
             return _room;
         }
 
-        private object GetHtmlForTime()
+        private object GetHtmlForHour()
         {
-            return _time;
+            return _hour;
         }
 
         private object GetHtmlForDay()

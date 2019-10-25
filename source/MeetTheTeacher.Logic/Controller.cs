@@ -40,7 +40,7 @@ namespace MeetTheTeacher.Logic
         /// ein TeacherWithDetails-Objekt und für andere Lehrer ein Teacher-Objekt angelegt.
         /// </summary>
         /// <returns>Anzahl der eingelesenen Lehrer</returns>
-        private void InitTeachers(string[] lines)
+        private void InitTeachers(string[] lines) 
         { 
             foreach (KeyValuePair<string,int> pair in _details)
             {
@@ -65,7 +65,7 @@ namespace MeetTheTeacher.Logic
             {
                 string[] splitLine = line.Split(";");
 
-                if (!IsTeacherInList(splitLine[0], names))
+                if (!IsTeacherInList(splitLine[0], names) && splitLine[0].Contains(" "))        //Damit auch nur echte Namen eingefügt werden und keine Überschriften wie Name, Zeit etc.
                 {
                     _teachers.Add(new Teacher(splitLine[0], splitLine[1], splitLine[2], splitLine[3], splitLine[4]));
                 }
