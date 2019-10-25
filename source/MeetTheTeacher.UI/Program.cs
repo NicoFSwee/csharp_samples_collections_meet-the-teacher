@@ -28,7 +28,15 @@ namespace MeetTheTeacher.UI
 
             Controller ctrl = new Controller(teacherLines, detailLines);
 
-            throw new NotImplementedException("Ausgabe lt. Angabe (siehe Screenshots) implementieren!");
+            ctrl.DeleteIgnoredTeachers(ignoredNames);
+
+            Console.WriteLine($"{ctrl.Count} Lehrersätze eingelesen");
+            Console.WriteLine("");
+            Console.WriteLine("Html-Ausgabe in Datei Sprechstunde.html:");
+            Console.WriteLine("-----------------------------------------------");
+
+            Console.WriteLine(ctrl.GetHtmlTable());
+
 
             string html = ctrl.GetHtmlTable();
             File.WriteAllText(Path.Combine(pathToOutputFiles, resultFileName), html, Encoding.Default);
